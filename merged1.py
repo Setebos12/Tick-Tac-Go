@@ -463,16 +463,17 @@ def add_to_memo(memo,node, move, eval, maximizing_player):
 
 
 # %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
-board = GridBoard(grid)
-game = Game(board)
-node = Node(game)
-memo = {}
-min_max_remember(node, 10000000, 1, memo)
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    board = GridBoard(grid)
+    game = Game(board)
+    node = Node(game)
+    memo = {}
+    min_max_remember(node, 10000000, 1, memo)
 
 
 # %%
@@ -633,15 +634,16 @@ class GameHistory:
 
 
 # %%
-player1 = Player("Ala", 0 , "X", memoagent(memo))
-player2 = Player("Bob", 0 , "S", random_player())
-players = [player1, player2]
-veryfiy = VeryficationV2(players)
-veryfiy.verify(1)
-veryfiy.results
+if __name__ == "__main__":
+    player1 = Player("Ala", 0 , "X", memoagent(memo))
+    player2 = Player("Bob", 0 , "S", random_player())
+    players = [player1, player2]
+    veryfiy = VeryficationV2(players)
+    veryfiy.verify(1)
+    veryfiy.results
 
 # %%
-gm = veryfiy.game_history
+
 
 
 def retrive_game(game_history):
@@ -654,11 +656,8 @@ def retrive_game(game_history):
   return ans.reverse()
 
 
-ans  = retrive_game(gm)
 
 # %%
-gm = veryfiy.game_history.begin_node.game.info()
-gm
 
 # %% [markdown]
 # # Q algorythm
@@ -673,7 +672,7 @@ gm
 #
 #
 #
-# 1.   another types of Q algorytm  
+# 1.   another types of Q algorytm
 #
 #
 #
@@ -1081,110 +1080,118 @@ class epsilonchanger:
 # # Nowa sekcja
 
 # %%
-agent = QAgentTrainV2()
-agent1 = QAgentTrainV2()
 
-agent.train(agent1, 4000)
+if __name__ == "__main__":
+    agent = QAgentTrainV2()
+    agent1 = QAgentTrainV2()
+
+    agent.train(agent1, 4000)
 
 # %% [markdown]
 # Agent lepiej się uczy gdy
 #
 
 # %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
-board = GridBoard(grid)
-game = Game(board)
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    board = GridBoard(grid)
+    game = Game(board)
 
-player1 = Player("Ala", 0 , "X", agent)
-player2 = Player("Bob", 0 , "S", memoagent(memo))
-players = [player1, player2]
-veryfiy = VeryficationV2(players)
-veryfiy.verify(5000)
-veryfiy.results
-
-# %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
-board = GridBoard(grid)
-game = Game(board)
-
-player1 = Player("Ala", 0 , "X", memoagent(memo))
-player2 = Player("Bob", 0 , "S", agent1)
-players = [player1, player2]
-veryfiy = VeryficationV2(players)
-veryfiy.verify(5000)
-veryfiy.results
+    player1 = Player("Ala", 0 , "X", agent)
+    player2 = Player("Bob", 0 , "S", memoagent(memo))
+    players = [player1, player2]
+    veryfiy = VeryficationV2(players)
+    veryfiy.verify(5000)
+    veryfiy.results
 
 # %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
-board = GridBoard(grid)
-game = Game(board)
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    board = GridBoard(grid)
+    game = Game(board)
 
-player1 = Player("Ala", 0 , "X", random_player())
-player2 = Player("Bob", 0 , "S", agent1)
-players = [player1, player2]
-veryfiy = VeryficationV2(players)
-veryfiy.verify(5000)
-veryfiy.results
-
-# %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
-board = GridBoard(grid)
-game = Game(board)
-
-player1 = Player("Ala", 0 , "X", agent)
-player2 = Player("Bob", 0 , "S", random_player())
-players = [player1, player2]
-veryfiy = VeryficationV2(players)
-veryfiy.verify(5000)
-veryfiy.results
+    player1 = Player("Ala", 0 , "X", memoagent(memo))
+    player2 = Player("Bob", 0 , "S", agent1)
+    players = [player1, player2]
+    veryfiy = VeryficationV2(players)
+    veryfiy.verify(5000)
+    veryfiy.results
 
 # %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
-board = GridBoard(grid)
-game = Game(board)
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    board = GridBoard(grid)
+    game = Game(board)
 
-player1 = Player("Ala", 0 , "X", agent)
-player2 = Player("Bob", 0 , "S", agent1)
-players = [player1, player2]
-veryfiy = VeryficationV2(players)
-veryfiy.verify(5000)
-veryfiy.results
+    player1 = Player("Ala", 0 , "X", random_player())
+    player2 = Player("Bob", 0 , "S", agent1)
+    players = [player1, player2]
+    veryfiy = VeryficationV2(players)
+    veryfiy.verify(5000)
+    veryfiy.results
 
 # %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
-board = GridBoard(grid)
-game = Game(board)
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    board = GridBoard(grid)
+    game = Game(board)
 
-player1 = Player("Ala", 0 , "X", memoagent(memo))
-player2 = Player("Bob", 0 , "S", random_player())
-players = [player1, player2]
-veryfiy = VeryficationV2(players)
-veryfiy.verify(5000)
-veryfiy.results
+    player1 = Player("Ala", 0 , "X", agent)
+    player2 = Player("Bob", 0 , "S", random_player())
+    players = [player1, player2]
+    veryfiy = VeryficationV2(players)
+    veryfiy.verify(5000)
+    veryfiy.results
+
+# %%
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    board = GridBoard(grid)
+    game = Game(board)
+
+    player1 = Player("Ala", 0 , "X", agent)
+    player2 = Player("Bob", 0 , "S", agent1)
+    players = [player1, player2]
+    veryfiy = VeryficationV2(players)
+    veryfiy.verify(5000)
+    veryfiy.results
+
+# %%
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
+    board = GridBoard(grid)
+    game = Game(board)
+
+    player1 = Player("Ala", 0 , "X", memoagent(memo))
+    player2 = Player("Bob", 0 , "S", random_player())
+    players = [player1, player2]
+    veryfiy = VeryficationV2(players)
+    veryfiy.verify(5000)
+    veryfiy.results
 
 # %%
 # agent.train(agent1, 8000)
@@ -1198,102 +1205,46 @@ veryfiy.results
 # # Nowa sekcja
 
 # %%
-import unittest
 
-
-
-
-class TestTicTacToeAgent(unittest.TestCase):
-
-    def test_win_in_row(self):
-        board = ['X', 'X', ' ',  # <- agent powinien zagrać na 2
-                 ' ', ' ', ' ',
-                 ' ', ' ', ' ']
-        move = agent_move(board, 'X')
-        self.assertEqual(move, 2)
-
-    def test_win_in_column(self):
-        board = ['O', ' ', ' ',
-                 'O', ' ', ' ',
-                 ' ', ' ', ' ']  # <- agent 'O' powinien zagrać na 6
-        move = agent_move(board, 'O')
-        self.assertEqual(move, 6)
-
-    def test_win_in_diagonal(self):
-        board = ['X', ' ', ' ',
-                 ' ', 'X', ' ',
-                 ' ', ' ', ' ']  # <- agent powinien zagrać na 8
-        move = agent_move(board, 'X')
-        self.assertEqual(move, 8)
-
-    def test_no_win_play_first_free(self):
-        board = ['X', 'O', 'X',
-                 'O', 'X', 'O',
-                 ' ', ' ', ' ']  # agent nie może wygrać, powinien zagrać na 6
-        move = agent_move(board, 'X')
-        self.assertEqual(move, 6)
-
-    def test_block_opponent_win(self):
-        board = ['O', 'O', ' ',
-                 ' ', 'X', ' ',
-                 'X', ' ', ' ']  # <- agent 'X' powinien zablokować na 2
-        move = agent_move(board, 'X')
-        self.assertEqual(move, 2)
-
-    def test_block_column(self):
-        board = [' ', 'O', 'X',
-                 ' ', 'O', ' ',
-                 ' ', ' ', ' ']  # <- agent 'X' powinien zablokować na 7
-        move = agent_move(board, 'X')
-        self.assertEqual(move, 7)
-
-    def test_fork_move(self):
-        board = ['X', ' ', ' ',
-                 ' ', 'O', ' ',
-                 ' ', ' ', 'X']  # <- agent 'X' może utworzyć forka na 1
-        move = agent_move(board, 'X')
-        self.assertEqual(move, 1)
-
-# Uruchomienie testów w Colabie
-unittest.main(argv=[''], verbosity=2, exit=False)
 
 
 # %%
-grid = [
-      ['', '', ''],
-      ['', '', ''],
-      ['', '', '']
-  ]
+if __name__ == "__main__":
+    grid = [
+        ['', '', ''],
+        ['', '', ''],
+        ['', '', '']
+    ]
 
 
 
-board = GridBoard(grid)
-game = Game(board)
+    board = GridBoard(grid)
+    game = Game(board)
 
-mem =  memoagent(memo)
-mem.choose_move(Node(game))
+    mem =  memoagent(memo)
+    mem.choose_move(Node(game))
 
-# %%
-mem =  memoagent(memo)
-random_player()
+    # %%
+    mem =  memoagent(memo)
+    random_player()
 
-# %%
-agents = {
-    "memo": memoagent(memo=memo),
-    "random": random_player(),
-    "Qagent": agent
-}
+    # %%
+    agents = {
+        "memo": memoagent(memo=memo),
+        "random": random_player(),
+        "Qagent": agent
+    }
 
-for name, agent in agents.items():
-    try:
-        grid = [['X', 'X', ''], ['', '', ''], ['', 'S', 'S']]
-        board = GridBoard(grid)
-        game = Game(board)
-        node = Node(game)
+    for name, agent in agents.items():
+        try:
+            grid = [['X', 'X', ''], ['', '', ''], ['', 'S', 'S']]
+            board = GridBoard(grid)
+            game = Game(board)
+            node = Node(game)
 
-        move = agent.choose_move(node)
-        assert move == (0, 2), f"{name} failed: expected (0,2), got {move}"
-        print(f"✅ {name} passed")
+            move = agent.choose_move(node)
+            assert move == (0, 2), f"{name} failed: expected (0,2), got {move}"
+            print(f"✅ {name} passed")
 
-    except AssertionError as e:
-        print(f"❌ Test failed for {name}: {e}")
+        except AssertionError as e:
+            print(f"❌ Test failed for {name}: {e}")
